@@ -1,22 +1,13 @@
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
-from app.auth import supabase
+from app.core.supabase import supabase
 from app.database import get_connection
 from app.auth_dependencies import obtener_usuario_actual
+from app.models.usuario import RegistroUsuario, LoginUsuario
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
-
-class RegistroUsuario(BaseModel):
-    email: str
-    password: str
-    username: str
-
-
-class LoginUsuario(BaseModel):
-    email: str
-    password: str
 
 
 @router.post("/register")

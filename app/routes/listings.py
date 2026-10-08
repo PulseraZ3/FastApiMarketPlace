@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from app.database import get_connection
 from app.models.listing import CrearPublicacion
-from app.auth import supabase
+from app.core.supabase import supabase
 from app.auth_dependencies import obtener_usuario_actual
 
 
