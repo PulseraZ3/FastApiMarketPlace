@@ -1,0 +1,37 @@
+body
+{
+    background: url("../imagenes/fondo_nocturno.jpg") left bottom / cover no-repeat;
+    overflow: hidden;
+}
+
+#tarjeta
+{
+    top: 22%;
+    padding-bottom: 3vw;
+}
+
+.insignia
+{
+    position: absolute;
+    right: -0.4vw;
+    bottom: 0.2vw;
+    width: 3.4vw;
+    height: 3.4vw;
+    display: grid;
+    place-items: center;
+    background: #f28c28;
+    border: 0.3vw solid white;
+    border-radius: 50%;
+    color: white;
+    font-family: "Patrick Hand", cursive;
+    font-size: 2.4vw;
+    line-height: 1;
+}
+
+.explication
+{
+    margin: 0 0 0.6vw;
+    text-align: center;
+    font-size: clamp(13px, 1.3vw, 24px);
+}
+

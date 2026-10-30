@@ -1,11 +1,10 @@
 from fastapi import APIRouter, Depends
-from pydantic import BaseModel
 
 from app.core.supabase import supabase
 from app.database import get_connection
 from app.auth_dependencies import obtener_usuario_actual
 from app.models.usuario import RegistroUsuario, LoginUsuario
-
+#https://12.31:8000/auth/{}
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 

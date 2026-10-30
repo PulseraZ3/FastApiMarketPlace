@@ -1,0 +1,25 @@
+body
+{
+    background: url(../imagenes/fondo_nocturno.jpg) left bottom / cover no-repeat;
+    overflow: hidden;
+}
+
+#tarjeta
+{
+    top: 12%;
+    padding-bottom: 3vw;
+}
+
+.mas
+{
+    position: absolute;
+    right: -0.4vw;
+    bottom: 0.2vw;
+    width: 3.4vw;
+    height: 3.4vw;
+    display: grid;
+    place-items: center;
+    background: #25a244;
+    border: 0.3vw solid white;
+    border-radius: 50%;
+}
