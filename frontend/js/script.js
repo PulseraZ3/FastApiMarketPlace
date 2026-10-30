@@ -1,9 +1,9 @@
 const boton_comprar = document.getElementById("boton_comprar");
 const ventana = document.getElementById("ventana_comprar");
 
-boton_comprar.addEventListener("click", function ()
-{
+boton_comprar.addEventListener("click", function () {
     ventana.classList.remove("oculta");
+    cargar_publicaciones();
 });
 
 const boton_cerrar = document.getElementById("boton_cerrar");

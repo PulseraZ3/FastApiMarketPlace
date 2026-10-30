@@ -55,16 +55,23 @@ def obtener_publicaciones():
             cursor.execute(
                 """
                 SELECT
-                    id,
-                    category_id,
-                    title,
-                    description,
-                    price,
-                    condition,
-                    status,
-                    created_at
-                FROM listings
-                ORDER BY created_at DESC
+                    l.id,
+                    l.category_id,
+                    l.title,
+                    l.description,
+                    l.price,
+                    l.condition,
+                    l.status,
+                    l.created_at,
+                    (
+                        SELECT li.image_url
+                        FROM listing_images li
+                        WHERE li.listing_id = l.id
+                        ORDER BY li.id ASC
+                        LIMIT 1
+                    ) AS image_url
+                FROM listings l
+                ORDER BY l.created_at ASC
                 """
             )
             publicaciones = cursor.fetchall()
@@ -77,7 +84,8 @@ def obtener_publicaciones():
             "price": publicacion[4],
             "condition": publicacion[5],
             "status": publicacion[6],
-            "created_at": publicacion[7]
+            "created_at": publicacion[7],
+            "image_url": publicacion[8]
         }
         for publicacion in publicaciones
     ]

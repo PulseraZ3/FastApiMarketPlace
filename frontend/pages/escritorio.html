@@ -7,6 +7,7 @@
     </head>
     <body>
         <button class="icono" id="boton_comprar" style="left:4% ; top:12%;">
+
             <img src="../imagenes/comprar.png" alt="comprar.exe">
         </button>
         <button class="icono" id="boton_vender" style="left:4% ; top:36%;">
@@ -20,7 +21,7 @@
         </button>
 
         <div id="ventana_comprar" class="oculta">
-            <img src="../imagenes/ventana_comprar.png" alt="ventana_comprar.exe">
+            <img src="../imagenes/ventana_comprar.png" alt="ventana_comprar.exe" style="width: 100%;">
 
             <button class="boton_ventana" id="boton_cerrar" style="left:89%;">
                 <img src="../imagenes/cerrar.png" alt="cerrar">
@@ -57,7 +58,9 @@
             <div class="seccion oculta" id="seccion_otros">
                 <p>Aquí ira lo demás</p>
             </div>
-
+            <div id="contenedor_publicaciones" class="contenedor_publicaciones">
+                <p>Cargando publicaciones...</p>
+            </div>
         </div>
 
         <div id="ventana_perfil" class="oculta">
@@ -77,5 +80,6 @@
         </div>
 
         <script src="../js/script.js"></script>
+        <script src="../js/apiListing.js"></script>
     </body>
 </html>

@@ -1,4 +1,5 @@
-from fastapi import Depends
+from fastapi import Depends, HTTPException
+
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 from app.core.supabase import supabase
@@ -12,6 +13,22 @@ def obtener_usuario_actual(
 ):
     token = credentials.credentials
 
-    respuesta = supabase.auth.get_user(token)
+    try:
+        respuesta = supabase.auth.get_user(token)
 
-    return respuesta.user
+        if respuesta.user is None:
+            raise HTTPException(
+                status_code=401,
+                detail="Usuario no autenticado"
+            )
+
+        return respuesta.user
+
+    except HTTPException:
+        raise
+
+    except Exception:
+        raise HTTPException(
+            status_code=401,
+            detail="Token inválido o expirado"
+        )

@@ -114,3 +114,218 @@ body
     overflow: auto;
     font-size: 1.1vw;
 }
+/* CONTENEDOR DE PUBLICACIONES */
+.contenedor_publicaciones {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 60%;
+    height: 70%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    gap: 16px;
+
+    padding: 12px;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    background: #ece9d8;
+    border: 2px solid #8a9bb5;
+}
+
+/* TARJETA DE PUBLICACIÓN */
+.tarjeta_publicacion {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    min-width: 0;
+    padding: 0 10px 10px;
+
+    background: #f7f6ed;
+    border: 2px solid #316ac5;
+    border-radius: 5px;
+
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        2px 2px 3px #888;
+
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tarjeta_publicacion:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 4px 5px #777;
+}
+
+/* BARRA SUPERIOR AZUL */
+.encabezado_publicacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 -10px;
+    padding: 7px 9px;
+
+    background: linear-gradient(
+        to bottom,
+        #3c91ff 0%,
+        #0866df 45%,
+        #0053c9 100%
+    );
+
+    color: white;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px #17458b;
+}
+
+/* ESTADO */
+.estado_publicacion {
+    padding: 3px 7px;
+
+    color: #155b20;
+    background: #d8edc5;
+    border: 1px solid #91b77a;
+    border-radius: 2px;
+
+    font-size: 10px;
+    text-shadow: none;
+}
+
+/* IMAGEN */
+.imagen_publicacion {
+    width: 100%;
+    height: 135px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #e5e5e5;
+    border: 1px solid #9b9b9b;
+    box-shadow: inset 1px 1px 3px #aaa;
+}
+
+.imagen_publicacion img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* TÍTULO */
+.tarjeta_publicacion h3 {
+    margin: 3px 0;
+
+    color: #003399;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+/* PRECIO */
+.precio_publicacion {
+    margin: 0;
+
+    color: #16743c;
+    font-family: Tahoma, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* DESCRIPCIÓN */
+.descripcion_publicacion {
+    margin: 0;
+
+    color: #333;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+/* CONDICIÓN */
+.condicion_publicacion {
+    display: inline-block;
+    width: fit-content;
+
+    padding: 4px 8px;
+
+    color: #333;
+    background: #e8e2c8;
+    border: 1px solid #c6b98d;
+    border-radius: 2px;
+
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+}
+
+/* PIE DE TARJETA */
+.pie_publicacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: auto;
+    padding-top: 8px;
+
+    border-top: 1px solid #c5c5c5;
+}
+
+/* BOTÓN DE PUBLICACIÓN */
+.boton_ver_publicacion {
+    padding: 6px 12px;
+
+    color: #003399;
+    background: linear-gradient(
+        to bottom,
+        #ffffff,
+        #e1e9f5
+    );
+
+    border: 1px solid #316ac5;
+    border-radius: 3px;
+
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.boton_ver_publicacion:hover {
+    background: linear-gradient(
+        to bottom,
+        #fff6d5,
+        #ffdf8c
+    );
+}
+
+.boton_ver_publicacion:active {
+    background: #d4dff0;
+    box-shadow: inset 1px 1px 3px #777;
+}
+
+/* SCROLLBAR */
+.contenedor_publicaciones::-webkit-scrollbar {
+    width: 16px;
+}
+
+.contenedor_publicaciones::-webkit-scrollbar-track {
+    background: #e8e8e8;
+    border-left: 1px solid #aaa;
+}
+
+.contenedor_publicaciones::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to right,
+        #d9e8ff,
+        #75aaff,
+        #d9e8ff
+    );
+    border: 1px solid #4779c4;
+}
