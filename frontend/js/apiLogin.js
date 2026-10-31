@@ -22,8 +22,8 @@ formulario.addEventListener("submit", async(event)=>{
     if (!respuesta.ok){
         throw new Error(datos.detail || "Error al iniciar sesion")
     }
-    sessionStorage.setItem("access_token", datos.access_token);
-    sessionStorage.setItem("refresh_token", datos.refresh_token);
+localStorage.setItem("access_token", datos.access_token);
+localStorage.setItem("refresh_token", datos.refresh_token);
     window.location.href = "escritorio.html";
     }catch(error){
         mensajeError.textContent = error.message;

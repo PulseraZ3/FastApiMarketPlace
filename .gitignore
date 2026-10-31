@@ -15,3 +15,7 @@ __pycache__/
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+# Datos de ciencia de datos
+data/
+*.csv
