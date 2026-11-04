@@ -3,11 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <title>Unymarket</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-        <button class="icono" id="boton_comprar" style="left:4% ; top:12%;">
+        <!-- Filtro SVG: borde irregular y textura de crayola -->
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <filter id="crayon" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="ondas"/>
+                <feDisplacementMap in="SourceGraphic" in2="ondas" scale="5" result="torcido"/>
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="8" result="grano"/>
+                <feColorMatrix in="grano" type="matrix"
+                    values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.4" result="huecos"/>
+                <feComposite in="torcido" in2="huecos" operator="in"/>
+            </filter>
+        </svg>
 
+        <button class="icono" id="boton_comprar" style="left:4% ; top:12%;">
             <img src="../imagenes/comprar.png" alt="comprar.exe">
         </button>
         <button class="icono" id="boton_vender" style="left:4% ; top:36%;">
@@ -31,35 +45,20 @@
                 <img src="../imagenes/libros.png" alt="libros">
             </button>
 
-            <div class ="seccion oculta" id="seccion_libros">
-                <p>Aquí iran los libros</p>
-            </div>
-
             <button class="categoria" id="boton_ropa" style="top:49%;">
                 <img src="../imagenes/ropa.png" alt="ropa">
             </button>
-
-            <div  class="seccion oculta" id="seccion_ropa">
-                <p>Aquí ira la ropa</p>
-            </div>
 
             <button class="categoria" id="boton_tecnologia" style="top:61%; width:18%; left:8%;">
                 <img src="../imagenes/tecnologia.png" alt="tecnologia">
             </button>
 
-            <div class="seccion oculta" id="seccion_tecnologia">
-                <p>Aquí ira las cosas de tecnología</p>
-            </div>
-
             <button class="categoria" id="boton_otros" style="top:73%;">
                 <img src="../imagenes/otros.png" alt="Otros">
             </button>
 
-            <div class="seccion oculta" id="seccion_otros">
-                <p>Aquí ira lo demás</p>
-            </div>
             <div id="contenedor_publicaciones" class="contenedor_publicaciones">
-                <p>Cargando publicaciones...</p>
+                <p class="mensaje_estado">Cargando publicaciones...</p>
             </div>
         </div>
 
